@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+
+  #blockchain:
+  #build:
+  #context: ./blockchain
+  #dockerfile: Dockerfile.dev
+  #ports:
+  #- 8545:8545
+  #volumes:
+  #- ./blockchain:/usr/src/app/blockchain
+  #- /usr/src/app/blockchain/node_modules
+
+  smart-contracts:
+    build:
+      context: ./smart-contracts
+      dockerfile: Dockerfile.dev
+    ports:
+      - 9545:9545
+    volumes:
+      - ./smart-contracts:/usr/src/app/smart-contracts
+      - /usr/src/app/smart-contracts/node_modules

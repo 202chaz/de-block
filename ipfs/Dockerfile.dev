@@ -1,0 +1,9 @@
+FROM node:16
+
+WORKDIR /usr/src/app/ipfs
+
+COPY package*.json ./
+
+RUN npm install
+
+RUN npm install ipfs -g

@@ -1,0 +1,16 @@
+FROM node:16
+
+WORKDIR /usr/src/app/smart-contracts
+
+COPY package*.json ./
+
+RUN npm install
+
+RUN npm install -g truffle
+
+# Bundle app source
+COPY . .
+
+EXPOSE 9545
+
+CMD [ "truffle", "develop" ]
